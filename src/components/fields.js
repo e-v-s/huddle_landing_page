@@ -1,4 +1,4 @@
-import Button from './button';
+// import Button from './button';
 
 function Fields(props) {
 	console.log(props.data)
