@@ -24,7 +24,7 @@ function App() {
           setData(l => items)
         }
       }).catch(error => console.log(error))     
-    }, [database]);
+    }, []);
 
   return (
     <div className="App">
