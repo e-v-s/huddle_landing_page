@@ -7,9 +7,9 @@ import Fields from './components/fields';
 import logo from './images/logo.svg';
 
 function App() {
-  const [data, setData] = useState([]);
-  let database = firebase.firestore().collection('sections');
-  
+  const [data, setData] = useState(['']);
+  let database = firebase.firestore().collection('sections').orderBy("key", "asc");
+
   useEffect(() => {   
     database
       .get()
@@ -25,6 +25,8 @@ function App() {
         }
       }).catch(error => console.log(error))     
     }, []);
+
+    console.log(data)
 
   return (
     <div className="App">
