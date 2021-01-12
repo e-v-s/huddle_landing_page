@@ -18,7 +18,13 @@ const style = StyleSheet.create({
 		width: '220px',
 		border: 'none',
 		padding: '12px',
-		marginTop: '20px'
+		marginTop: '20px',
+		'@media only screen and (min-width: 720px)': {
+			width: '440px',
+			fontSize: '22px',
+			padding: '24px',
+			marginTop: '40px'
+		}
 	}
 });
 

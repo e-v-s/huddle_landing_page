@@ -12,7 +12,10 @@ const style = StyleSheet.create({
 	img: {
 		width: '84%',
 		display: 'block',
-		margin: '80px auto'
+		margin: '80px auto',
+		'@media only screen and (min-width: 720px)': {
+			width: '70%'
+		}
 	},
 });
 

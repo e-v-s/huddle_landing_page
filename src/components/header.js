@@ -16,7 +16,7 @@ const style = StyleSheet.create({
 		alignItems: 'baseline', 
 		padding: '20px',
 		'@media only screen and (min-width: 720px)': {
-			padding: '40px'
+			padding: '80px'
 		}
 	},
 	headerBtn: {
@@ -36,7 +36,7 @@ const style = StyleSheet.create({
 	logo: {
 		width: '110px',
 		'@media only screen and (min-width: 720px)': {
-			width: '220px'	
+			width: '280px'	
 		}
 	}
 })

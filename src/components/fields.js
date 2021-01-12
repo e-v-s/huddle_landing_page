@@ -37,12 +37,20 @@ const style = StyleSheet.create({
 		fontFamily: `'Poppins', sans-serif`,
 		fontWeight: '700',
 		fontSize: '24px',
+		'@media only screen and (min-width: 720px)': {
+			fontSize: '64px',
+		},
 	},
 	text: {
 		fontFamily: `'Open Sans', sans-serif`,
 		fontWeight: '300',
 		fontSize: '14px',
-		padding: '14px'
+		padding: '14px',
+		'@media only screen and (min-width: 720px)': {
+			fontSize: '24px',
+			width: '38%',
+			margin: '0 auto'
+		}
 	}
 })
 
