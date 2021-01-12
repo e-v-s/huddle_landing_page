@@ -24,7 +24,8 @@ function App() {
           setData(l => items)
         }
       }).catch(error => console.log(error))     
-    }, [database]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     console.log(data)
 
