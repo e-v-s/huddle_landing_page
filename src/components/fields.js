@@ -16,8 +16,8 @@ function Fields(props) {
 			<div className={css(style.numbersSection)}>
 				<div className={css(style.numberSection)}>
 					<Icons src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/icon-communities.svg?alt=media&token=7bb8f86e-7d68-4774-b26f-8817f034d80d" />
-					<h1 className={css(style.number)}>{props.data[1]['title']}</h1>
-					<p className={css(style.textNumber)}>{props.data[1]['text']}</p>
+					<h1 className={css(style.number)}>{props.data[1].title}</h1>
+					<p className={css(style.textNumber)}>{props.data[1].text}</p>
 				</div>
 				<div>
 					<Icons src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/icon-messages.svg?alt=media&token=a426adf3-baad-44c5-a29c-d213d5edadc9" />

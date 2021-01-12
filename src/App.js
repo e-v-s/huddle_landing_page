@@ -7,27 +7,17 @@ import Fields from './components/fields';
 import logo from './images/logo.svg';
 
 function App() {
-  const [data, setData] = useState(['']);
+  const [data, setData] = useState(null);
   let database = firebase.firestore().collection('sections').orderBy("key", "asc");
 
-
+  let items = [];
   useEffect(() => {   
     database
-      .get()
-      .then(snapshot => {
-        if(!snapshot) {
-          setData(l => [''])
-        } else {
-          let items = []
-          snapshot.forEach(i => {
-            items.push({ ...i.data() })
-          })
-          setData(l => items)
-        }
-      }).catch(error => console.log(error))     
+      .get().then(snapshot => snapshot.forEach( doc => {
+        items.push(doc.data());
+      })).then(() => setData(items))
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
+  }, []);
 
   return (
     <div className="App">
@@ -36,5 +26,5 @@ function App() {
     </div>
     );
   }
-
+  
 export default App;
