@@ -5,27 +5,33 @@ import Images from './images';
 import Icons from './icons';
 
 function Fields(props) {
+
   return (
-		<div>
-			<div className={css(style.section)}>
-				<h1 className={css(style.title)}>{props.data[0].title}</h1>
-				<p className={css(style.text)}>{props.data[0].text}</p>
-				<Button />
-			</div>
-			<Images alt="screen mockup" src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/screen-mockups.svg?alt=media&token=56f0cf14-9f04-4558-8459-ba723bc5ded4" />
-			<div className={css(style.numbersSection)}>
-				<div className={css(style.numberSection)}>
-					<Icons src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/icon-communities.svg?alt=media&token=7bb8f86e-7d68-4774-b26f-8817f034d80d" />
-					<h1 className={css(style.number)}>{props.data[0].title ? props.data[1].title : props.data[0].title}</h1>
-					<p className={css(style.textNumber)}>{props.data[0].text ? props.data[1].text : props.data[0].text}</p>
+		<>
+		{
+			props.data[0].title ? 
+			<div>
+				<div className={css(style.section)}>
+					<h1 className={css(style.title)}>{props.data[0].title}</h1>
+					<p className={css(style.text)}>{props.data[0].text}</p>
+					<Button />
 				</div>
-				<div>
-					<Icons src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/icon-messages.svg?alt=media&token=a426adf3-baad-44c5-a29c-d213d5edadc9" />
-					<h1 className={css(style.number2)}>{props.data[0].title ? props.data[2]['title'] : props.data[0].title}</h1>
-					<p className={css(style.textNumber)}>{props.data[0].text ? props.data[2]['text'] : props.data[0].text}</p>
+				<Images alt="screen mockup" src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/screen-mockups.svg?alt=media&token=56f0cf14-9f04-4558-8459-ba723bc5ded4" />
+				<div className={css(style.numbersSection)}>
+					<div className={css(style.numberSection)}>
+						<Icons src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/icon-communities.svg?alt=media&token=7bb8f86e-7d68-4774-b26f-8817f034d80d" />
+						<h1 className={css(style.number)}>{props.data[1].title}</h1>
+						<p className={css(style.textNumber)}>{props.data[1].text}</p>
+					</div>
+					<div>
+						<Icons src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/icon-messages.svg?alt=media&token=a426adf3-baad-44c5-a29c-d213d5edadc9" />
+						<h1 className={css(style.number2)}>{props.data[2]['title']}</h1>
+						<p className={css(style.textNumber)}>{props.data[2]['text']}</p>
+					</div>
 				</div>
-			</div>
-		</div>
+			</div> : null
+		}
+		</>
 	)
 }
 

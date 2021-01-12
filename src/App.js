@@ -12,7 +12,6 @@ function App() {
 
   useEffect(() => {   
     let items = [];
-    
 
     database
       .get().then(snapshot => snapshot.forEach( doc => {
@@ -20,6 +19,8 @@ function App() {
       })).then(() => {return setData(items)})
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    
 
   return (
     <div className="App">
