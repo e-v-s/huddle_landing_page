@@ -7,7 +7,7 @@ import Icons from './icons';
 function Fields(props) {
 
   return (
-		<>
+		<div>
 		{
 			props.data[0].title ? 
 			<div>
@@ -25,20 +25,28 @@ function Fields(props) {
 					</div>
 					<div>
 						<Icons src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/icon-messages.svg?alt=media&token=a426adf3-baad-44c5-a29c-d213d5edadc9" />
-						<h1 className={css(style.number2)}>{props.data[2]['title']}</h1>
-						<p className={css(style.textNumber)}>{props.data[2]['text']}</p>
+						<h1 className={css(style.number2)}>{props.data[2].title}</h1>
+						<p className={css(style.textNumber)}>{props.data[2].text}</p>
 					</div>
 				</div>
-			</div> : null
+				<div className={css(style.blueSectionContainer)}>
+					<Images alt="people chatting" src="https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/illustration-grow-together.svg?alt=media&token=b7d968e3-f139-42a0-bb97-4ebff887c054" style={{backgroundColor: '#F6FBFF'}} styleBackground={{backgroundColor: '#F6FBFF'}} />
+					<div className={css(style.blueSection)}>
+						<h1 className={css(style.title)}>{props.data[3].title}</h1>
+						<p className={css(style.text2)}>{props.data[3].text}</p>
+					</div>
+				</div>
+				<div className={css(style.backgroundSection3)}></div>
+				</div> : null
 		}
-		</>
+		</div>
 	)
 }
 
 const style = StyleSheet.create({
 	section: {
 		padding: '16px',
-		marginTop: '40px',
+		paddingTop: '40px',
 		textAlign: 'center'
 	},
 	title: {
@@ -62,6 +70,18 @@ const style = StyleSheet.create({
 			margin: '0 auto'
 		}
 	},
+	text2 : {
+		fontFamily: `'Open Sans', sans-serif`,
+		fontWeight: '300',
+		fontSize: '14px',
+		padding: '14px',
+		color: 'hsl(192, 100%, 9%)',
+		'@media only screen and (min-width: 720px)': {
+			fontSize: '20px',
+			width: '80%',
+			textAlign: 'left',
+		}
+	},
 	numbersSection: {
 		display: 'flex',
 		flexDirection: 'column',
@@ -70,6 +90,7 @@ const style = StyleSheet.create({
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'bottom',
 		paddingBottom: '120px',
+		backgroundSize: 'cover',
 		'@media only screen and (min-width: 720px)': {
 			backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/bg-section-top-desktop-1.svg?alt=media&token=9f511305-29b3-41c0-9c05-4f733a953533)',
 			backgroundSize: '100%',
@@ -108,6 +129,33 @@ const style = StyleSheet.create({
 		'@media only screen and (min-width: 720px)': {
 			fontSize: '26px',
 			paddingBottom: '120px'
+		}
+	},
+	blueSectionContainer: {
+		'@media only screen and (min-width: 720px)': {
+			display: 'flex',
+			flexDirection: 'row-reverse',
+		}
+	},
+	blueSection: {
+		paddingBottom: '120px',
+		backgroundColor: '#F6FBFF',
+		padding: '16px',
+		textAlign: 'center',
+		'@media only screen and (min-width: 720px)': {
+			paddingTop: '10%',
+			textAlign: 'left',
+			paddingLeft: '120px',
+		}
+	},
+	backgroundSection3: {
+		backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/bg-section-bottom-mobile-2.svg?alt=media&token=d6351435-a93d-4ed3-be26-9de0714bded6)',
+		backgroundRepeat: 'no-repeat',
+		paddingBottom: '120px',
+		backgroundSize: 'cover',
+		'@media only screen and (min-width: 720px)': {
+			backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/huddle-e2c19.appspot.com/o/bg-section-bottom-desktop-2.svg?alt=media&token=99bf59a0-b187-496d-95a8-39f1083021ec)',
+			backgroundSize: 'cover',
 		}
 	}
 })
