@@ -74,7 +74,7 @@ const style = StyleSheet.create({
 		}
 	},
 	numberSection: {
-		marginBottom: '80px',
+		paddingBottom: '80px',
 		marginTop: '40px'
 	},
 	number: {
