@@ -1,4 +1,4 @@
-// import Button from './button';
+import { css, StyleSheet } from 'aphrodite';
 
 function Fields(props) {
 	console.log(props.data)
@@ -18,6 +18,8 @@ function Fields(props) {
 	)
 };
 
-//teste
+const style = StyleSheet.create({
+
+});
 
 export default Fields;
