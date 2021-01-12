@@ -10,12 +10,13 @@ function App() {
   const [data, setData] = useState(['']);
   let database = firebase.firestore().collection('sections').orderBy("key", "asc");
 
+
   useEffect(() => {   
     database
       .get()
       .then(snapshot => {
         if(!snapshot) {
-          setData(l => [])
+          setData(l => [''])
         } else {
           let items = []
           snapshot.forEach(i => {
@@ -27,7 +28,6 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    console.log(data)
 
   return (
     <div className="App">
