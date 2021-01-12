@@ -7,18 +7,20 @@ import Fields from './components/fields';
 import logo from './images/logo.svg';
 
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([{title: '', text: ''}]);
   let database = firebase.firestore().collection('sections').orderBy("key", "asc");
 
-  let items = [];
   useEffect(() => {   
+    let items = [];
+    
+
     database
       .get().then(snapshot => snapshot.forEach( doc => {
         items.push(doc.data());
       })).then(() => {return setData(items)})
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
+
   return (
     <div className="App">
     <Header btn='Try It Free' src={logo} />
