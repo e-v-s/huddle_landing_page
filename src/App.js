@@ -15,10 +15,10 @@ function App() {
     database
       .get().then(snapshot => snapshot.forEach( doc => {
         items.push(doc.data());
-      })).then(() => setData(items))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+      })).then(() => {return setData(items)})
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+    
   return (
     <div className="App">
     <Header btn='Try It Free' src={logo} />
